@@ -8,6 +8,20 @@ import {connect} from 'react-redux';
 import * as actionTypes from './store/actionTypes';
 import {Route} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
+import Pusher from 'pusher-js/react-native';
+
+// Enable pusher logging - don't include this in production
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('f2e484518adbbe9fa4d4', {
+  cluster: 'eu',
+  forceTLS: true
+});
+
+var channel = pusher.subscribe('my-channel');
+channel.bind('my-event', function(data) {
+  alert(data.message);
+});
 
 class App extends Component {
 

@@ -7,6 +7,15 @@ const Content = require('./model/content');
 const Account = require('./model/account');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const Pusher = require('pusher');
+
+var pusher = new Pusher({
+  appId: '639257',
+  key: 'f2e484518adbbe9fa4d4',
+  secret: '4dfaca6c27fe4630c3e6',
+  cluster: 'eu',
+  encrypted: true
+});
 
 var url = "mongodb://max:databasepassword1@ds145093.mlab.com:45093/mydb";
 
@@ -28,6 +37,9 @@ app.get('/',(req,res) => {
 });
 
 app.post('/signup',function(req,res){
+    pusher.trigger('my-channel', 'my-event', {
+        "message": "hello world"
+      });
     let query = {"mail": req.body.mail}
     Account.find(query)
     .exec()
