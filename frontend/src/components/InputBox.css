@@ -1,0 +1,15 @@
+.Submit{
+    height: 30px;
+    width: 80%;
+    background-color: darkgrey;
+    position: relative;
+    top: 40%;
+    margin-left: 10%;
+    border-radius: 2px;
+}
+.Submit p{
+    margin-top: 10px;
+}
+input{
+    margin: 5px;
+}

@@ -1,0 +1,63 @@
+::-webkit-scrollbar{
+  display: none;
+}
+body{
+  background-color: rgb(2, 26, 69);
+}
+.App {
+  margin: 0px;
+  padding: 1px;
+  text-align: center;
+  background-image: url("./pics/bg.jpeg");
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.SignObject{
+  width: 300px;
+  height: 400px;
+  margin-left: 50px;
+  padding: 1px;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 5px;
+  float: left;
+}
+.SignObject input{
+  border: none;
+  width: 80%;
+  position: relative;
+  top: 100px;
+  margin-left: 5%;
+  border-bottom: 1px solid black;
+  height: 50px;
+  font-size: 1.4em;
+}
+
+.SignObject p{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.DataObject{
+  width: 20vw;
+  background-color: white;
+  float: right;
+  margin: 10px;
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+@media only screen and (max-device-width: 800px){
+  .DataObject{
+      width: 300px;
+      float: none;
+      height: 40px;
+      margin: 0 auto;
+      min-width: none;
+      margin-left: 40px;
+      margin-bottom: 5px;
+      padding: 3px;
+  }
+}
