@@ -11,16 +11,6 @@ import {withRouter} from 'react-router-dom';
 import Pusher from 'pusher-js/react-native';
 
 
-var pusher = new Pusher('f2e484518adbbe9fa4d4', {
-  cluster: 'eu',
-  forceTLS: true
-});
-
-var channel = pusher.subscribe('my-channel');
-channel.bind('my-event', function(data) {
-  alert(data.message);
-});
-
 class App extends Component {
 
 
@@ -34,6 +24,14 @@ class App extends Component {
 
   apiCall = (url,method,body) => {
     let that = this;
+    var pusher = new Pusher('f2e484518adbbe9fa4d4', {
+      cluster: 'eu',
+      forceTLS: true
+    });
+    var channel = pusher.subscribe('my-channel');
+      channel.bind('my-event', function(data) {
+        alert(data.message);
+      });
     let token = localStorage.getItem("token");
     var type = url.split("/",2);
     type = type.splice(1);
