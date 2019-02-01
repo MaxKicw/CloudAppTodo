@@ -57,7 +57,7 @@ class App extends Component {
         break;
     }
     console.log("API-Call with type of "+type+" to "+url+",with method of "+method+" and this body: "+fetchBody);
-    return fetch(new Request('https://radiant-fjord-36427.herokuapp.com'+url,{
+    return fetch(new Request('http://localhost:5000'+url,{
       method: method,
       headers: new Headers({
         "Content-Type":"application/json",
